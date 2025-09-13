@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    /* Academic color palette */
-    --background: 0 0% 99%;
+    /* Modern academic color palette */
+    --background: 0 0% 100%;
     --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
@@ -16,38 +16,41 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    /* Academic blue theme */
-    --primary: 214 84% 36%;
+    /* Sophisticated blue theme with depth */
+    --primary: 220 91% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 214 84% 46%;
-    --primary-dark: 214 84% 26%;
+    --primary-light: 220 91% 58%;
+    --primary-dark: 220 91% 38%;
+    --primary-ultra-light: 220 91% 95%;
 
-    --secondary: 214 20% 96%;
-    --secondary-foreground: 214 84% 26%;
+    --secondary: 220 15% 97%;
+    --secondary-foreground: 220 91% 38%;
 
-    --muted: 214 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 214 84% 50%;
+    --accent: 220 91% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 214 84% 36%;
+    --border: 220 15% 92%;
+    --input: 220 15% 92%;
+    --ring: 220 91% 48%;
 
-    /* Professional gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(214 84% 36%), hsl(214 84% 50%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(214 20% 99%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(214 20% 98%));
+    /* Modern gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 91% 48%) 0%, hsl(220 91% 58%) 50%, hsl(220 91% 68%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 15% 99%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 99%) 100%);
+    --gradient-mesh: radial-gradient(ellipse at top, hsl(220 91% 95%) 0%, transparent 70%);
 
-    /* Professional shadows */
-    --shadow-sm: 0 2px 4px hsl(214 84% 36% / 0.08);
-    --shadow-md: 0 4px 12px hsl(214 84% 36% / 0.12);
-    --shadow-lg: 0 8px 24px hsl(214 84% 36% / 0.16);
-    --shadow-hero: 0 20px 40px hsl(214 84% 36% / 0.2);
+    /* Professional shadows with depth */
+    --shadow-sm: 0 2px 8px hsl(220 91% 48% / 0.08);
+    --shadow-md: 0 8px 25px hsl(220 91% 48% / 0.12);
+    --shadow-lg: 0 16px 40px hsl(220 91% 48% / 0.16);
+    --shadow-hero: 0 32px 64px hsl(220 91% 48% / 0.2);
+    --shadow-float: 0 20px 60px hsl(220 91% 48% / 0.15);
 
     /* Typography scale */
     --font-heading: 'Inter', system-ui, sans-serif;
@@ -127,6 +130,10 @@
     background: var(--gradient-hero);
   }
   
+  .hero-mesh {
+    background: var(--gradient-mesh);
+  }
+  
   .card-gradient {
     background: var(--gradient-card);
   }
@@ -137,5 +144,58 @@
   
   .shadow-hero {
     box-shadow: var(--shadow-hero);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(220 91% 48%), hsl(220 91% 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, hsl(220 91% 48% / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
