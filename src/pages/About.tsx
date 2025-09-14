@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { generatePersonStructuredData, generateOrganizationStructuredData } from "@/lib/structuredData";
 import professorPortrait from "@/assets/file.jpeg";
 import { add } from "date-fns";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const personalInfo = {
@@ -299,15 +300,15 @@ const About = () => {
                       Download CV
                     </a>
                   </Button>
-                  <Button
+                    <Button
                     size="lg"
                     className="border-white/0 text-white hover:bg-white/10"
                     asChild
-                  >
-                    <a href="/contact">
+                    >
+                    <Link to="/contact">
                       Contact Me
-                    </a>
-                  </Button>
+                    </Link>
+                    </Button>
                 </div>
               </div>
 
