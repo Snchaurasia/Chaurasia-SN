@@ -287,8 +287,17 @@ const About = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-primary-light hover:bg-primary-lighter text-white">
-                    Download CV
+                  <Button
+                    size="lg"
+                    className="bg-primary-light hover:bg-primary-lighter text-white"
+                    asChild
+                  >
+                    <a
+                      href="/src/assets/cv.pdf"
+                      download="Sachchida_Nand_Chaurasia_CV.pdf"
+                    >
+                      Download CV
+                    </a>
                   </Button>
                   <Button
                     size="lg"
