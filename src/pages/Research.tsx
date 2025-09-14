@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
+import { generateResearchProjectStructuredData, generatePublicationStructuredData } from "@/lib/structuredData";
 
 const Research = () => {
   const currentProject = {
@@ -63,60 +65,75 @@ const Research = () => {
   ];
 
   const researchMetrics = [
-    { label: "Publications", value: "50+", color: "from-blue-500 to-purple-600" },
-    { label: "Citations", value: "1200+", color: "from-purple-500 to-pink-600" },
-    { label: "H-Index", value: "18", color: "from-pink-500 to-red-600" },
-    { label: "Projects", value: "15+", color: "from-red-500 to-orange-600" }
+    { label: "Publications", value: "50+" },
+    { label: "Citations", value: "1200+" },
+    { label: "H-Index", value: "18" },
+    { label: "Projects", value: "15+" }
+  ];
+
+    const conferencePapers = [
+    {
+      authors: "Shyam Sundar, Sachchida Nand Chaurasia and Alok Singh",
+      title: "An ant colony optimization approach for the dominating tree problem",
+      conference: "International conference on Swarm, Evolutionary and Memetic Computing (SEMCOO-2015)",
+      details: "Volume 9873, 143-153, LNCS-Springer-Verlag"
+    },
+    {
+      authors: "Sachchida Nand Chaurasia, S. Sundar, D. Jung, H. M. Lee and J. H. Kim",
+      title: "An evolutionary algorithm based hyper-heuristic for the job-shop scheduling problem with no-wait constraint",
+      conference: "International Conference on Harmony Search, Soft computing and Applications (ICHSA- 2018)",
+      details: "Volume 741, 249-257, AISC-Springer-Verlag"
+    },
+    {
+      authors: "Sachchida Nand Chaurasia, D. Jung, H. M. Lee and J. H. Kim",
+      title: "An evolutionary algorithm based hyper-heuristic for the set packing problem",
+      conference: "International Conference on Harmony Search, Soft computing and Applications (ICHSA- 2018)",
+      details: "Volume 741, 259-268, AISC-Springer-Verlag",
+      award: "Best paper award"
+    }
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <SEO
+        title="Research & Publications - Dr. Sachchida Nand Chaurasia"
+        description="Explore cutting-edge research by Dr. Sachchida Nand Chaurasia in Machine Learning, Evolutionary Algorithms, and Combinatorial Optimization. 50+ publications in top-tier journals."
+        keywords="Research Publications, Machine Learning Research, Evolutionary Algorithms, Combinatorial Optimization, Computer Science Research, Academic Publications, BHU Research"
+        structuredData={generateResearchProjectStructuredData()}
+      />
+      
+      {/* ...existing code... */}
       <section className="relative overflow-hidden hero-gradient">
-        <div className="pattern-dots absolute inset-0 opacity-30"></div>
-        <div className="hero-mesh absolute inset-0"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center text-white space-y-8">
             <div className="animate-slide-up">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Research & 
-                <span className="block text-gradient bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                <span className="block text-white/90">
                   Innovation
                 </span>
               </h1>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Advancing the frontiers of <strong>Computer Science</strong> through innovative research in 
+              <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                Advancing the frontiers of Computer Science through innovative research in 
                 optimization algorithms, machine learning, and computational intelligence
               </p>
-            </div>
-
-            {/* Research Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
-              {researchMetrics.map((metric, index) => (
-                <div key={index} className="glass-effect rounded-2xl p-6 text-center animate-fade-in">
-                  <div className={`text-3xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent mb-2`}>
-                    {metric.value}
-                  </div>
-                  <div className="text-white/80 text-sm">{metric.label}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Current Research Project */}
-      <section className="py-20 bg-gradient-to-br from-primary-ultra-light to-white">
+      <section className="py-20 bg-primary-lightest">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl font-bold text-primary mb-4">Current Research</h2>
             <p className="text-xl text-muted-foreground">Leading-edge projects shaping the future of technology</p>
           </div>
           
-          <Card className="shadow-hero max-w-5xl mx-auto border-0 bg-white/90 backdrop-blur-sm">
+          <Card className="simple-card shadow-elevated max-w-5xl mx-auto animate-fade-in">
             <CardHeader className="pb-6">
               <div className="flex items-center justify-between mb-4">
-                <Badge className="bg-gradient-to-r from-primary to-primary-light text-white border-0">
+                <Badge className="bg-primary text-white">
                   Active Project
                 </Badge>
                 <div className="text-right">
@@ -146,7 +163,7 @@ const Research = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-primary-ultra-light to-transparent p-6 rounded-2xl">
+                <div className="bg-primary-lightest p-6 rounded-xl border border-primary/10">
                   <h4 className="font-semibold text-primary mb-2">Project Overview</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {currentProject.description}
@@ -168,15 +185,15 @@ const Research = () => {
           
           <div className="space-y-8">
             {publications.map((pub, index) => (
-              <Card key={index} className="shadow-professional hover:shadow-float transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white/95 backdrop-blur-sm">
+              <Card key={index} className="simple-card hover-lift animate-fade-in">
                 <CardContent className="p-8">
                   <div className="flex justify-between items-start gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
-                        <Badge variant="outline" className="border-primary text-primary bg-primary/5">
+                        <Badge variant="outline" className="border-primary text-primary">
                           {pub.year}
                         </Badge>
-                        <div className="h-1 w-20 bg-gradient-to-r from-primary to-primary-light rounded-full"></div>
+                        <div className="h-px w-20 bg-primary rounded-full"></div>
                       </div>
                       <h3 className="font-bold text-xl text-primary mb-3 leading-tight">
                         {pub.title}
@@ -193,7 +210,7 @@ const Research = () => {
                         </p>
                       </div>
                     </div>
-                    <Button variant="outline" size="lg" asChild className="shadow-professional hover:shadow-float transition-all duration-300 transform hover:-translate-y-1">
+                    <Button variant="outline" size="lg" asChild className="simple-card hover-lift border-primary text-primary hover:bg-primary hover:text-white">
                       <a href={pub.url} target="_blank" rel="noopener noreferrer">
                         Read Paper
                       </a>
@@ -213,7 +230,43 @@ const Research = () => {
           </div>
         </div>
       </section>
-
+ {/* Conference Publications */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl font-bold text-primary mb-4">Conference Publications</h2>
+            <p className="text-xl text-muted-foreground">Presentations at international conferences and symposiums</p>
+          </div>
+          <div className="space-y-6">
+            {conferencePapers.map((paper, index) => (
+              <Card key={index} className="simple-card hover-lift animate-fade-in">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start mb-3">
+                    <Badge variant="secondary" className="bg-primary-lighter text-primary">
+                      Conference Paper
+                    </Badge>
+                    {paper.award && (
+                      <Badge variant="default" className="bg-primary text-white">
+                        {paper.award}
+                      </Badge>
+                    )}
+                  </div>
+                  <h3 className="font-semibold text-lg text-primary mb-2">{paper.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    <strong>Authors:</strong> {paper.authors}
+                  </p>
+                  <p className="text-sm text-primary-light mb-1">
+                    <strong>Conference:</strong> {paper.conference}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Details:</strong> {paper.details}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Research Areas */}
       <section className="py-20 bg-gradient-to-br from-secondary to-primary-ultra-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,7 +310,7 @@ const Research = () => {
             ].map((area, index) => (
               <Card key={index} className="group shadow-professional hover:shadow-float transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white/90 backdrop-blur-sm">
                 <CardContent className="p-8">
-                  <div className={`h-2 w-full bg-gradient-to-r ${area.gradient} rounded-full mb-6`}></div>
+                  {/* <div className={`h-2 w-full bg-gradient-to-r ${area.gradient} rounded-full mb-6`}></div> */}
                   <h3 className="font-bold text-xl text-primary mb-4">{area.area}</h3>
                   <p className="text-muted-foreground leading-relaxed">{area.description}</p>
                 </CardContent>

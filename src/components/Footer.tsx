@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Information */}
@@ -33,13 +33,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <a href="/" className="block text-sm hover:text-accent transition-colors">
+              <a href="/" className="block text-sm hover:text-primary-lighter transition-colors">
                 About
               </a>
-              <a href="/research" className="block text-sm hover:text-accent transition-colors">
+              <a href="/research" className="block text-sm hover:text-primary-lighter transition-colors">
                 Research
               </a>
-              <a href="/contact" className="block text-sm hover:text-accent transition-colors">
+              <a href="/contact" className="block text-sm hover:text-primary-lighter transition-colors">
                 Contact
               </a>
             </div>

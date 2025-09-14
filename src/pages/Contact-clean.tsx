@@ -149,7 +149,7 @@ const Contact = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden hero-gradient py-24">
+      <section className="relative overflow-hidden  py-24">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white space-y-8">
             <div>

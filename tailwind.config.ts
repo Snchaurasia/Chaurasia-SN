@@ -23,8 +23,8 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           light: "hsl(var(--primary-light))",
-          dark: "hsl(var(--primary-dark))",
-          "ultra-light": "hsl(var(--primary-ultra-light))",
+          lighter: "hsl(var(--primary-lighter))",
+          lightest: "hsl(var(--primary-lightest))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
