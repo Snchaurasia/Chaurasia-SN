@@ -47,7 +47,7 @@ const About = () => {
   ];
 
   const academicLinks = [
-    { name: "Google Scholar", url: "https://scholar.google.co.in/citations?user=hZz9PpYAAAAJ&hl=en" },
+    { name: "Google Scholar", url: "https://scholar.google.com/citations?user=2uT767IAAAAJ&hl=en" },
     { name: "ORCID",id:"0000-0002-0635-0808", url: "https://orcid.org/0000-0002-0635-0808" },
     { name: "ResearchGate", url: "#" },
     { name: "DBLP", url: "#" },
