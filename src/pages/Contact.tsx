@@ -142,7 +142,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <SEO
         title="Contact Dr. Sachchida Nand Chaurasia - Academic Collaboration & Research Inquiries"
-        description="Get in touch with Dr. Sachchida Nand Chaurasia for research collaborations, academic discussions, and opportunities in computer science. Contact information, office hours, and academic profiles."
+        description="Get Hellooooooooo in touch with Dr. Sachchida Nand Chaurasia for research collaborations, academic discussions, and opportunities in computer science. Contact information, office hours, and academic profiles."
         keywords="Contact Dr. Sachchida Nand Chaurasia, Research Collaboration, Academic Inquiry, BHU Computer Science, Research Partnership, Academic Discussion, Varanasi University"
         type="website"
         url={typeof window !== 'undefined' ? window.location.href : 'https://your-domain.com/contact'}
