@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Dr. SSSSSachchida Nand Chaurasia - Computer Science Research & Innovation"
+        title="Dr. Sachchida Nand Chaurasia - Computer Science Research & Innovation"
         description="Dr. Sachchida Nand Chaurasia is an Assistant Professor at Banaras Hindu University, specializing in Combinatorial Optimization, Machine Learning, and Evolutionary Algorithms. Explore cutting-edge research in computer science."
         keywords="Dr. Sachchida Nand Chaurasia, Computer Science, Machine Learning, Evolutionary Algorithms, Combinatorial Optimization, BHU, Research, Academia, Artificial Intelligence, Optimization, Publications"
         type="website"
