@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   const personalInfo = {
-    name: "sssssSachchida Nand Chaurasia, PhD",
+    name: "Sachchida Nand Chaurasia, PhD",
     personalEmail: "sachchidanand.mca07@gmail.com",
     officialEmail: "snchaurasia@bhu.ac.in",
     mobile: "+95 9492425485",
